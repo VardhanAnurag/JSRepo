@@ -9,6 +9,8 @@
 	</link>	
 	<script language="JavaScript" src="./assets/javascript/com/org/common/domReady.js">
 	</script>
+	<script language="JavaScript" src="./assets/javascript/com/org/common/event.js">
+	</script>
 	<script language="JavaScript" src="./assets/javascript/com/org/common/hashTable.js">
 	</script>
 	<script language="JavaScript" src="./assets/javascript/com/org/common/util.js">

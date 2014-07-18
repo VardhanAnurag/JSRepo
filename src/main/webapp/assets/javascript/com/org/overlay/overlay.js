@@ -36,6 +36,10 @@ function showModal(childComponent,title,isTitleRequired,isCloseRequired)
 function hideModal()
 {
 	setModalVisibility(false);
+	if(isVariable("OVERLAY_CLOSE_EVENT"))
+	{
+		new Event().dispatch(OVERLAY_CLOSE_EVENT);
+	}
 }
 
 function removeModal()
@@ -86,6 +90,8 @@ function createCloseButton()
 	btnClose = document.createElement("a");
 	btnClose.setAttribute("href","javascript:void(0)");
 	btnClose.className = "closeButton";
+	btnClose.onmouseover = function() { this.className = "closeButton_hover"; };
+    btnClose.onmouseout = function() { this.className = "closeButton"; };
 	btnClose.style.textDecoration="none";
 	//btnClose.style.color = "#FFFFFF"; 
 	if(isBrowserIE())

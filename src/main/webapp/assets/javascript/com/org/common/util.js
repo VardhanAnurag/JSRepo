@@ -207,6 +207,11 @@ function isArray(refArr)
       "splice" in refArr && "join" in refArr;
 }
 
+function isVariable(variableName) 
+{
+	return !isUndefined(window[variableName]); 
+}
+
 function callFunction(functionName) 
 {
 	if (typeof window[functionName] === "function") 

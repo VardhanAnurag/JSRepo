@@ -5,15 +5,17 @@
 	<meta http-equiv="Cache-Control" Content="no-cache">
 	<meta http-equiv="Pragma" Content="no-cache">
 	<meta http-equiv="Expires" Content="0">
-	<title>JavaScript Automation</title>
+	<title>Progress Bar Demo</title>
 	<!-- uncomment when we are not using merging and compressing of JS and Css -->
 	<script language="JavaScript" src="./assets/javascript/com/org/common/domReady.js">
+	</script>
+	<script language="JavaScript" src="./assets/javascript/com/org/common/event.js">
 	</script>
 	<script language="JavaScript" src="./assets/javascript/com/org/common/hashTable.js">
 	</script>
 	<script language="JavaScript" src="./assets/javascript/com/org/common/util.js">
 	</script>
-	<script language="JavaScript" src="./assets/javascript/application.js">
+	<script language="JavaScript" src="./assets/javascript/progressBarDemo.js">
 	</script>
 	
 	<!-- uncomment when we are using merging and compressing of JS and Css 

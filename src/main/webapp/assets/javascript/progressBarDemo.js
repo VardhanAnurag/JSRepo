@@ -1,4 +1,5 @@
 var LOADING_MESSAGE="Connect has detected new version .. Updating files";
+var OVERLAY_CLOSE_EVENT="DOWNLOAD_COMPLETE";
 var divParentLoader = null;
 var divMessage = null;
 var isProgessBarShown=false;
@@ -31,6 +32,7 @@ function includeFiles()
 function loadHandler()
 {
 	progressTimer=setInterval(function(){progressBarProgress();},1000);
+	new Event().addListener(OVERLAY_CLOSE_EVENT, closeHandler);
 }
 
 function createParentLoader()
@@ -72,6 +74,11 @@ function loadProgress()
 		count=0;
 	}
 	progressBarCallBack(count,totalCount);
+}
+
+function closeHandler()
+{
+	alert("Loader Closed");
 }
 
 //Global Exception Handler
