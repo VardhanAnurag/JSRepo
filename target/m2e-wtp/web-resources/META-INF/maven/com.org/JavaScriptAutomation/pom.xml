@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.org</groupId>
+  <artifactId>JavaScriptAutomation</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>JavaScriptAutomation Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	  <groupId>javax.servlet</groupId>
+	  <artifactId>javax.servlet-api</artifactId>
+	  <version>3.1.0</version>
+	  <scope>provided</scope>
+	</dependency>
+  </dependencies>
+  <build>
+	   		<plugins>
+	   			<plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-assembly-plugin</artifactId>
+	                <version>2.4</version>
+	                <configuration>
+	                    <descriptorRefs>
+	                        <descriptorRef>src</descriptorRef>
+	                    </descriptorRefs>
+	                </configuration>
+	            </plugin>
+<!-- 	            <plugin> -->
+<!-- 	                <groupId>org.apache.maven.plugins</groupId> -->
+<!-- 	                <artifactId>maven-war-plugin</artifactId> -->
+<!-- 	                <version>2.4</version> -->
+<!-- 	                <configuration> -->
+<!-- 	                	<warName>javaScriptAutomation</warName> -->
+<!-- 	                	<warSourceExcludes>assets/**</warSourceExcludes> -->
+<!-- 	                </configuration> -->
+<!-- 	            </plugin> -->
+<!-- 	   			<plugin> -->
+<!-- 	   				<groupId>com.samaxes.maven</groupId> -->
+<!-- 			        <artifactId>minify-maven-plugin</artifactId> -->
+<!-- 			        <version>1.6</version> -->
+<!-- 	   				 <executions> -->
+<!-- 				          <execution> -->
+<!-- 				            <id>default-minify</id> -->
+<!-- 				            <configuration> -->
+<!-- 				              <cssSourceDir>assets/css</cssSourceDir> -->
+<!-- 				              <cssSourceFiles> -->
+<!-- 				              		<cssSourceFile>com/org/overlay/overlay.css</cssSourceFile> -->
+<!-- 				              		<cssSourceFile>com/org/progressBar/progressBar.css</cssSourceFile> -->
+<!-- 				              </cssSourceFiles> -->
+<!-- 				              <cssTargetDir>css</cssTargetDir> -->
+<!-- 				              <cssFinalFile>applicationMerged.css</cssFinalFile> -->
+<!-- 				              <jsSourceDir>assets/javascript</jsSourceDir> -->
+<!-- 				              <jsSourceFiles> -->
+<!-- 									 <jsSourceFile>application.js</jsSourceFile> -->
+<!-- 									 <jsSourceFile>com/org/common/util.js</jsSourceFile> -->
+<!-- 									 <jsSourceFile>com/org/overlay/overlay.js</jsSourceFile> -->
+<!-- 									 <jsSourceFile>com/org/progressBar/progressBar.js</jsSourceFile> -->
+<!-- 				              </jsSourceFiles> -->
+<!-- 				              <jsTargetDir>js</jsTargetDir> -->
+<!-- 				           	  <jsFinalFile>applicationMerged.js</jsFinalFile> -->
+<!-- 				           	  <jsEngine>CLOSURE</jsEngine> -->
+<!-- 				            </configuration> -->
+<!-- 				            <goals> -->
+<!-- 				              <goal>minify</goal> -->
+<!-- 				            </goals> -->
+<!-- 				          </execution> -->
+<!-- 				     </executions> -->
+<!-- 	   			</plugin> -->
+  		 </plugins>
+  </build>
+  <properties>        
+	  	<maven.compiler.source>1.5</maven.compiler.source>        
+	  	<maven.compiler.target>1.5</maven.compiler.target>        
+	  	<skipTests>true</skipTests>    
+   </properties>
+</project>

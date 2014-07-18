@@ -1,0 +1,22 @@
+.contextContainer
+{
+    margin: 0; 
+    padding: 0;
+    width:185px;
+    list-style-type: none;
+}
+
+.contextMenu
+{
+    text-decoration: none;
+    color: white; 
+    padding: 5.5px 11px;
+    background-color: #005555;
+    display:block;
+}
+ 
+.contextMenu:hover
+{
+    color: white;
+    background-color: #5FD367;
+}
