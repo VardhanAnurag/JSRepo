@@ -46,7 +46,8 @@ function createParentLoader()
 	divMessage = new createDiv("divMessage");
 	//start of center align of div
 	divMessage.style.margin = "auto";
-	divMessage.style.width = "70%";
+	divMessage.style.textAlign = "center";
+	//divMessage.style.width = "70%";
 	//end of center align of div
 	divMessage.style.fontWeight="bold";
 	divMessage.innerHTML=LOADING_MESSAGE;
@@ -61,7 +62,7 @@ function progressBarProgress()
 	{
 		isProgessBarShown=true;
 		createParentLoader();
-		showModal(divParentLoader,LOADING_MESSAGE,true,true);
+		showModal(divParentLoader,LOADING_MESSAGE,false,false);
 	}
 	loadProgress();
 }
