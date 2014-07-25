@@ -170,21 +170,3 @@ function removeContextMenuDiv()
 {
     removeDiv("divContext");
 }
-
-function getEvent(event)
-{
-	// IE is evil and doesn't pass the event object
-	if (!event)
-	{
-		event = window.event;
-	}
-	return event;
-}
-
-function getTarget(event)
-{
-	// we assume we have a standards compliant browser, but check if we have IE
-	event = getEvent(event);
-	var target = event.target ? event.target : event.srcElement;
-	return target;
-}

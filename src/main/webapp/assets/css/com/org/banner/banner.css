@@ -1,0 +1,47 @@
+.infoBanner
+ {
+  border-bottom:1px solid black;
+  background:#E5ECEF;
+  padding: 3px 0;
+  text-indent: 5px;
+  font: normal 11px Verdana;
+ }
+ 
+ .warningBanner
+ {
+  border-bottom:1px solid black;
+  background:#FFFF99;
+  padding: 3px 0;
+  text-indent: 5px;
+  font: normal 11px Verdana;
+ }
+ 
+ .errorBanner
+ {
+  border-bottom:1px solid black;
+  background:#FACDCA;
+  padding: 3px 0;
+  text-indent: 5px;
+  font: normal 11px Verdana;
+ }
+ 
+ .closeBannerButton
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color : #000000;
+}
+
+.closeBannerButton_hover
+{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    color : #FC1D00;
+}
+
+.fixedElement
+{
+ position:fixed;
+}

@@ -265,6 +265,135 @@ function isBrowserIE()
     return false;
 }
 
+//returns the top y coordinate of the given div used while listening to scrolling events(vertical scrolling)
+function scrollTop(div)
+{
+	 if(div)
+	 {
+	    return (div.scrollHeight - div.clientHeight);
+	 }
+}
+
+//returns the top x coordinate of the given div used while listening to scrolling events(horizontal scrolling)
+function scrollLeft(div)
+{
+	 if(div)
+	 {
+		 return (div.scrollWidth - div.clientWidth);
+	 }
+}
+
+//adds Style class to an element's styles list 
+function addStyleClass(divAlert,styleClass)
+{
+    if(divAlert && styleClass && styleClass.length > 0)
+    {
+        if(document.body.classList == undefined)
+        {
+            if(!hasStyleClass(divAlert,styleClass))
+            {
+                divAlert.className += " " + styleClass;
+            }
+        }
+        else
+        {
+            if(!hasStyleClass(divAlert,styleClass))
+            {
+                divAlert.classList.add(styleClass);
+            }
+        }
+    }
+}
+
+//returns true if a Style class is present in element's styles list
+function hasStyleClass(divAlert,styleClass)
+{
+    if(divAlert && styleClass && styleClass.length > 0)
+    {
+        if(document.body.classList == undefined)
+        {
+            return (divAlert.className.indexOf(" " + styleClass) > -1);
+        }
+        else
+        {
+            return divAlert.classList.contains(styleClass);
+        }
+    }
+    return false;
+}
+
+//removes Style class from an element's styles list
+function removeStyleClass(divAlert,styleClass)
+{
+    if(divAlert && styleClass && styleClass.length > 0)
+    {
+        if(document.body.classList == undefined)
+        {
+            if(divAlert.className)
+            {
+                divAlert.className = divAlert.className.replace(" " + styleClass,"");
+            }
+        }
+        else
+        {
+            divAlert.classList.remove(styleClass);
+        }
+    }
+}
+
+//returns event for all kind of browser
+function getEvent(event)
+{
+	// IE is evil and doesn't pass the event object
+	if (!event)
+	{
+		event = window.event;
+	}
+	return event;
+}
+
+//returns target for all kind of browser
+function getTarget(event)
+{
+	// we assume we have a standards compliant browser, but check if we have IE
+	event = getEvent(event);
+	var target = event.target ? event.target : event.srcElement;
+	return target;
+}
+
+
+//copied from http://www.broofa.com/Tools/Math.uuid.js
+function getUniqueId() 
+{
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("");
+    var uuid = new Array(36);
+    var rnd=0;
+    var r;
+    
+    for (var count = 0; count < 36; count++) 
+    {
+      if (count==8 || count==13 ||  count==18 || count==23) 
+      {
+        uuid[count] = '-';
+      } 
+      else if (count==14) 
+      {
+        uuid[count] = '4';
+      } 
+      else 
+      {
+        if (rnd <= 0x02) 
+        {
+        	rnd = 0x2000000 + (Math.random()*0x1000000) | 0;
+        }
+        r = rnd & 0xf;
+        rnd = rnd >> 4;
+        uuid[count] = chars[(count == 19) ? (r & 0x3) | 0x8 : r];
+      }
+    }
+    return uuid.join('');
+ }
+
 
 
 
