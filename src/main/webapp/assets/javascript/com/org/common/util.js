@@ -265,6 +265,18 @@ function isBrowserIE()
     return false;
 }
 
+//navigates to the DOM Heirarchy to find the nearest parent of the specified HTML tag 
+function findParent(element,parentTag)
+{
+    if(element && parentTag)
+    {
+        while (element && element.tagName && element.tagName.toLowerCase()!=parentTag.toLowerCase())
+        {
+            element = element.parentNode;
+        }
+    }  
+    return element;
+}
 //returns the top y coordinate of the given div used while listening to scrolling events(vertical scrolling)
 function scrollTop(div)
 {
@@ -337,6 +349,29 @@ function removeStyleClass(divAlert,styleClass)
         else
         {
             divAlert.classList.remove(styleClass);
+        }
+    }
+}
+
+//change Style class from an element's styles list
+function changeStyleClass(divAlert,oldStyleClass,newStyleClass)
+{
+    if(divAlert && oldStyleClass && oldStyleClass.length > 0 && newStyleClass && newStyleClass.length > 0)
+    {
+        if(divAlert.classList == undefined)
+        {
+            if(divAlert.className)
+            {
+                divAlert.className = divAlert.className.replace(oldStyleClass,newStyleClass);
+            }
+        }
+        else
+        {
+            divAlert.classList.remove(oldStyleClass);
+            if(!divAlert.classList.contains(newStyleClass))
+            {
+                divAlert.classList.add(newStyleClass);
+            }
         }
     }
 }
