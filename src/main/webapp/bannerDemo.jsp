@@ -19,6 +19,8 @@
 	</script>
 	<script language="JavaScript" src="./assets/javascript/bannerDemo.js">
 	</script>
+	<script language="JavaScript">
+	</script>
 </head>
 <body  style="margin: 0px;" onscroll="scrollHere();">
   <div id="divWrite">
